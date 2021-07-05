@@ -45,3 +45,4 @@ jobs:
         body: ${{steps.bump-version.outputs.changelog}}
         base: main
         head: release
+        assignee: TheRealWaldo

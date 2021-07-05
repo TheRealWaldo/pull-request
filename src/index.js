@@ -48,7 +48,7 @@ try {
       });
     } else {
       info('PR does not already exist, creating...');
-      const { response } = await octokit.request('POST /repos/{owner}/{repo}/pulls', {
+      await octokit.request('POST /repos/{owner}/{repo}/pulls', {
         owner,
         repo,
         title,
@@ -58,7 +58,7 @@ try {
         draft,
       }).catch((error) => {
         setFailed(error.message);
-      }).then(() => {
+      }).then((response) => {
         pullNumber = response.number;
         setOutput('pull-number', pullNumber);
         info(`Created #${pullNumber}`);

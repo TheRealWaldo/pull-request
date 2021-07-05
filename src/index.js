@@ -22,7 +22,7 @@ try {
     const { data } = await octokit.request('GET /repos/{owner}/{repo}/pulls', {
       owner,
       repo,
-      head,
+      owner: owner.concat(':', head),
       state: 'open',
     });
 

@@ -45,7 +45,7 @@ try {
       info(`Updated #${pullNumber}`);
     } else {
       info('PR does not already exist, creating...');
-      const response = await octokit.request('POST /repos/{owner}/{repo}/pulls', {
+      const { response } = await octokit.request('POST /repos/{owner}/{repo}/pulls', {
         owner,
         repo,
         title,

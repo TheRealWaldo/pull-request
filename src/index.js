@@ -39,6 +39,8 @@ try {
         pull_number: pullNumber,
         title,
         body,
+      }).catch((error) => {
+        setFailed(error.message);
       });
       info(`Updated #${pullNumber}`);
     } else {
@@ -51,6 +53,8 @@ try {
         head,
         base,
         draft,
+      }).catch((error) => {
+        setFailed(error.message);
       });
       pullNumber = response.number;
       setOutput('pull-number', pullNumber);
@@ -62,6 +66,8 @@ try {
         repo,
         issue_number: pullNumber,
         assignees: [assignee],
+      }).catch((error) => {
+        setFailed(error.message);
       });
     }
   });

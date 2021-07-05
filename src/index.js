@@ -13,6 +13,7 @@ const base = getInput('base');
 const title = getInput('title');
 const body = getInput('body');
 const draft = (getInput('draft') === 'true');
+const assignee = getInput('assignee');
 
 info(`Firing from ${context.eventName} on ${context.ref}`);
 
@@ -26,8 +27,10 @@ try {
       state: 'open',
     });
 
+    let pullNumber = null;
+
     if (data.length > 0) {
-      const pullNumber = data[0].number;
+      pullNumber = data[0].number;
       setOutput('pull-number', pullNumber);
       info(`PR #${pullNumber} exists, updating...`);
       await octokit.request('PATCH /repos/{owner}/{repo}/pulls/{pull_number}', {
@@ -49,9 +52,17 @@ try {
         base,
         draft,
       });
-      const pullNumber = response.number;
+      pullNumber = response.number;
       setOutput('pull-number', pullNumber);
       info(`Created #${pullNumber}`);
+    }
+    if (assignee) {
+      await octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
+        owner,
+        repo,
+        issue_number: pullNumber,
+        assignees: [assignee],
+      });
     }
   });
 } catch (error) {

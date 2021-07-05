@@ -26,6 +26,10 @@ Whether or not the pull-request should be opened as a draft.
 
 Defaults to `false`.
 
+### `assignee`
+
+Github user to assign to pull-request
+
 ## Outputs
 
 ### `pull-number`

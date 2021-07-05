@@ -20,6 +20,9 @@ inputs:
     description: Whether or not the pull-request should be opened as a draft
     required: false
     default: 'false'
+  assignee:
+    description: Github user to assign to pull-request
+    required: false
 outputs:
   pull-number:
     description: Pull request number

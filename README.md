@@ -40,7 +40,7 @@ Pull request number.
 
 ```
 - name: pull-request
-  uses: TheRealWaldo/pull-request@v0.1.0
+  uses: TheRealWaldo/pull-request@v0.1.1
   with:
     json-opts: '{"dry-run": true}'
 ```

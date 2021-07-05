@@ -1,0 +1,28 @@
+name: pull-request Github Action
+description: Github Action to create amd modify pull-requests
+branding:
+  icon: git-pull-request
+  color: blue
+inputs:
+  title:
+    description: Title of the pull-request
+    required: true
+  body:
+    description: Body of the pull-request
+    required: true
+  head:
+    description: Name of branch to be merged into the base and create or update pull-request for
+    required: true
+  base:
+    description: Name of the branch that the pull-request will be merged into
+    required: true
+  draft:
+    description: Whether or not the pull-request should be opened as a draft
+    required: false
+    default: 'false'
+outputs:
+  pull-number:
+    description: Pull request number
+runs:
+  using: 'node12'
+  main: dist/index.js

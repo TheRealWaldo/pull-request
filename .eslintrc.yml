@@ -1,0 +1,10 @@
+env:
+  browser: false
+  es2020: true
+extends:
+  - airbnb-base
+plugins:
+  - prettier
+parserOptions:
+  ecmaVersion: 11
+  sourceType: module

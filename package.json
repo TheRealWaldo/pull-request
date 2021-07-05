@@ -1,0 +1,45 @@
+{
+  "name": "gh-action-pull-request",
+  "version": "0.0.1",
+  "description": " Github Action to create amd modify pull-requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint --cache src/*.js",
+    "lint-fix": "npx eslint --fix --cache src/*.js",
+    "build": "npx ncc build src/*.js -m",
+    "lint-build": "npm run lint-staged && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRealWaldo/pull-request.git"
+  },
+  "author": "TheRealWaldo",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/TheRealWaldo/release-it/issues"
+  },
+  "homepage": "https://github.com/TheRealWaldo/release-it#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/exec": "^1.1.0",
+    "@actions/github": "^5.0.0",
+    "@octokit/action": "^3.10.2",
+    "actions-toolkit": "^6.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@release-it/bumper": "^2.0.0",
+    "@release-it/conventional-changelog": "^3.0.1",
+    "@vercel/ncc": "^0.28.6",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1",
+    "release-it": "^14.10.0"
+  }
+}

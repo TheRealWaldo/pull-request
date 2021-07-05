@@ -25,6 +25,8 @@ try {
       repo,
       head: owner.concat(':', head),
       state: 'open',
+    }).catch((error) => {
+      setFailed(error.message);
     });
 
     let pullNumber = null;

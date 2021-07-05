@@ -39,6 +39,8 @@ jobs:
 
     - name: Create pull request
       uses: ./
+      env:
+        GITHUB_TOKEN: ${{ secrets.AUTO_PAT }}
       with:
         draft: true
         title: "chore(release): ${{steps.bump-version.outputs.version}}"

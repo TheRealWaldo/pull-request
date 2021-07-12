@@ -11,36 +11,33 @@
   "github": {
     "release": true,
     "releaseName": "Release v${version}",
-    "draft": true
+    "draft": false
   },
   "hooks": {
-    "after:bump": [ "npm run lint-fix", "npm run build" ],
+    "after:bump": ["npm run lint-fix", "npm run build"],
     "after:release": "echo Successfully bumped release to v${version} for ${repo.repository}."
   },
   "npm": false,
   "plugins": {
     "@release-it/bumper": {
-      "out": {
-        "file": "README.md",
-        "type": "text/plain"
-      }
+      "out": ["README.md", "VERSION"]
     },
     "@release-it/conventional-changelog": {
       "preset": {
         "name": "conventionalcommits",
         "header": "Release notes",
         "types": [
-          {"type": "feat", "section": "Features"},
-          {"type": "fix", "section": "Bug Fixes"},
-          {"type": "chore", "hidden": true},
-          {"type": "docs", "hidden": true},
-          {"type": "style", "hidden": true},
-          {"type": "refactor", "hidden": true},
-          {"type": "perf", "section": "Performance Enhancements"},
-          {"type": "test", "hidden": true},
-          {"type": "build", "hidden": true},
-          {"type": "ci", "hidden": true},
-          {"type": "revert", "hidden": true}
+          { "type": "feat", "section": "Features" },
+          { "type": "fix", "section": "Bug Fixes" },
+          { "type": "chore", "hidden": true },
+          { "type": "docs", "hidden": true },
+          { "type": "style", "hidden": true },
+          { "type": "refactor", "hidden": true },
+          { "type": "perf", "section": "Performance Enhancements" },
+          { "type": "test", "hidden": true },
+          { "type": "build", "hidden": true },
+          { "type": "ci", "hidden": true },
+          { "type": "revert", "hidden": true }
         ]
       }
     }

@@ -40,6 +40,7 @@ jobs:
           json-opts: '{"github": {"release": false}}'
 
       - name: Create pull request
+        if: "github.ref == 'refs/heads/main' && !contains(toJSON(github.event.commits.*.message), 'chore(release)')"
         uses: ./
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_PAT }}

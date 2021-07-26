@@ -17,9 +17,9 @@
   "author": "TheRealWaldo",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/TheRealWaldo/release-it/issues"
+    "url": "https://github.com/TheRealWaldo/pull-request/issues"
   },
-  "homepage": "https://github.com/TheRealWaldo/release-it#readme",
+  "homepage": "https://github.com/TheRealWaldo/pull-request#readme",
   "dependencies": {
     "@actions/core": "^1.4.0",
     "@actions/exec": "^1.1.0",

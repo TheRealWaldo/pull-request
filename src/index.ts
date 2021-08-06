@@ -11,16 +11,16 @@ if (!owner || !repo) {
   process.exit(1);
 }
 
-const head = getInput('head');
-const base = getInput('base');
-const title = getInput('title');
-const body = getInput('body');
-const draft = (getInput('draft') === 'true');
-const assignee = getInput('assignee');
-
 info(`Firing from ${context.eventName} on ${context.ref}`);
 
 try {
+  const head = getInput('head', {required: true});
+  const base = getInput('base', {required: true});
+  const title = getInput('title', {required: true});
+  const body = getInput('body', {required: true});
+  const draft = (getInput('draft') === 'true');
+  const assignee = getInput('assignee');
+
   group('pull-request', async () => {
     info('Checking if open pull request for branch already exists...');
 

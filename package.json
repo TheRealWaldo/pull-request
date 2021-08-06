@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx eslint --cache src/*.js",
-    "lint-fix": "npx eslint --fix --cache src/*.js",
-    "build": "npx ncc build src/*.js -m",
-    "lint-build": "npm run lint-staged && npm run build"
+    "lint": "npx eslint --cache src/*.ts",
+    "lint-fix": "npx eslint --fix --cache src/*.ts",
+    "build": "npx ncc build src/*.ts -m",
+    "lint-build": "npm run lint-staged && npm run build",
+    "lint-fix-build": "npm run lint-fix && npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,9 @@
     "@commitlint/config-conventional": "^13.1.0",
     "@release-it/bumper": "^3.0.1",
     "@release-it/conventional-changelog": "^3.0.1",
+    "@tsconfig/node14": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
     "@vercel/ncc": "^0.29.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -40,6 +44,7 @@
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.1",
-    "release-it": "^14.10.1"
+    "release-it": "^14.10.1",
+    "typescript": "^4.3.5"
   }
 }

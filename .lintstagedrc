@@ -1,4 +1,4 @@
-'src/*.js':
+'src/*.ts':
   - eslint --cache --fix
   - ncc build -m
   - git add dist/** dist/*.js

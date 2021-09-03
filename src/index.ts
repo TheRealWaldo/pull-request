@@ -74,5 +74,7 @@ try {
     }
   });
 } catch (error) {
-  setFailed(error.message);
+  if (error instanceof Error) {
+    setFailed(error.message);
+  }
 }

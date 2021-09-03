@@ -22,7 +22,7 @@ try {
   group('pull-request', async () => {
     info('Checking if open pull request for branch already exists...');
 
-    const { data } = await octokit.request('GET /repos/{owner}/{repo}/pulls', {
+    const { data } = await octokit.pulls.list({
       owner,
       repo,
       head: owner.concat(':', head),
@@ -35,8 +35,8 @@ try {
       pullNumber = data[0].number;
       setOutput('pull-number', pullNumber);
       info(`PR #${pullNumber} exists, updating...`);
-      await octokit
-        .request('PATCH /repos/{owner}/{repo}/pulls/{pull_number}', {
+      await octokit.pulls
+        .update({
           owner,
           repo,
           pull_number: pullNumber,
@@ -48,8 +48,8 @@ try {
         });
     } else {
       info('PR does not already exist, creating...');
-      await octokit
-        .request('POST /repos/{owner}/{repo}/pulls', {
+      await octokit.pulls
+        .create({
           owner,
           repo,
           title,
@@ -65,7 +65,7 @@ try {
         });
     }
     if (assignee && pullNumber) {
-      await octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/assignees', {
+      await octokit.issues.addAssignees({
         owner,
         repo,
         issue_number: pullNumber,

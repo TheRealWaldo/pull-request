@@ -29,7 +29,7 @@
     "actions-toolkit": "^6.0.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.5.1",
+    "@commitlint/cli": "^17.6.0",
     "@commitlint/config-conventional": "^17.4.4",
     "@tsconfig/node14": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",

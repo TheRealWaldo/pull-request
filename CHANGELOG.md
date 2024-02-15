@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/TheRealWaldo/pull-request/compare/v0.2.2...v0.2.3) (2024-02-15)
+
+
+### Bug Fixes
+
+* update dependencies ([#521](https://github.com/TheRealWaldo/pull-request/issues/521)) ([60d8ff7](https://github.com/TheRealWaldo/pull-request/commit/60d8ff760889e678a5e9b19b8875545945d09e8e))
+
 ## [0.2.2](https://github.com/TheRealWaldo/pull-request/compare/v0.2.1...v0.2.2) (2023-06-26)
 
 
